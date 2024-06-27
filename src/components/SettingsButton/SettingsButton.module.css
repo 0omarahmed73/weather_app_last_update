@@ -1,0 +1,17 @@
+.buttonsetting {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--textColor) !important;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out !important;
+  &:hover {
+    scale: 1.1;
+  }
+}

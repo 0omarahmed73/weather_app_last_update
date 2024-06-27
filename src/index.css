@@ -1,0 +1,236 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+@import url(https://fonts.googleapis.com/css?family=Almarai:300,regular,700,800);
+[data-theme='light'] {
+  --bgColor: #FFFFFF;
+  --bgColorOverlay: rgba(2, 8, 24, 0.8);
+  --textColor: #020818;
+  --formBG: #eee;
+  --formBGHover: #e9e9e8;
+  --placeHolder: #757575;
+  --cardBG: #EEEEEE;
+}
+
+[data-theme="dark"] {
+  --bgColor: #020818;
+  --bgColorOverlay: rgba(255, 255, 255, 0.8);
+  --textColor: #FFFFFF;
+  --formBG: #31363f;
+  --formBGHover: #3e424b;
+  --placeHolder: #b8b6b6;
+  --cardBG: #31363F;
+}
+
+
+* {
+  transition: 0.4s ease-in-out background-color !important;
+}
+
+body {
+  background-color: var(--bgColor) !important;
+  font-family: 'Almarai', sans-serif !important;
+  color: var(--textColor) !important;
+
+}
+
+p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.main-btn {
+  background-color: var(--bgColor) !important;
+  color: var(--textColor) !important;
+  border: 1px solid var(--textColor);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out !important;
+
+  &:hover {
+    background-color: var(--textColor) !important;
+    color: var(--bgColor) !important;
+    border: 1px solid var(--bgColor) !important;
+  }
+
+}
+
+.parent {
+  background-color: var(--bgColor);
+  color: var(--textColor) !important;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+
+  & .navbar-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    width: 100%;
+    height: fit-content;
+
+    @media screen and (max-width: 992px) {
+      padding: 1rem 1rem;
+    }
+
+    & * {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.location-name {
+  & p {
+    font-size: 12px;
+  }
+
+  & svg {
+    fill: var(--textColor);
+  }
+}
+
+.form-choose-city {
+  display: flex;
+  justify-content: center;
+}
+
+.date-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & p {
+    font-size: 12px;
+  }
+}
+
+.date-theme {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row !important;
+  gap: 10px;
+  flex-direction: column;
+
+  & p {
+    font-size: 12px;
+  }
+
+}
+
+/* form select */
+.form-select {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 8px !important;
+  border: none;
+  border-radius: 4px !important;
+  outline: none !important;
+  font-size: 14px !important;
+  background-color: var(--formBG) !important;
+  transition: 0.1s ease-in-out !important;
+
+
+
+  &:focus {
+    border: 1px solid var(--textColor) !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  &:hover {
+    background-color: var(--formBGHover) !important;
+  }
+
+}
+
+.form-control {
+  width: 100% !important;
+  height: 36px !important;
+  padding: 0 8px !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  outline: none !important;
+  font-size: 14px !important;
+  background-color: var(--formBG) !important;
+  color: var(--textColor) !important;
+  transition: 0.1s ease-in-out !important;
+
+
+
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+
+    &::placeholder {
+      color: transparent !important;
+    }
+  }
+
+  &:hover {
+    background-color: var(--formBGHover) !important;
+  }
+
+  &::placeholder {
+    color: var(--placeHolder) !important;
+    transition: 0.3s ease-in-out !important;
+  }
+}
+
+/* loader */
+/* Spinner */
+.loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid var(--textColor);
+  animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+  }
+}
+
+
+.bgColor {
+  background-color: var(--bgColor) !important;
+  color: var(--textColor) !important;
+}
